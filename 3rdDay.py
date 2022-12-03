@@ -1,6 +1,5 @@
 # Part 1
 import string
-from collections import Counter
 
 
 with open("3rdDay.txt", "r") as file:
