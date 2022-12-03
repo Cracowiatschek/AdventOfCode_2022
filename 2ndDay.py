@@ -45,6 +45,7 @@ print(sum(result))
 
 # Part 2
 
+
 wins = []
 draws = []
 losses = []
@@ -53,13 +54,18 @@ result_II = []
 for i in lines:
     if i[2:] == 'Z':
         result_II.append(6)
-        wins.append(i[:2])
+        wins.append(i[:1])
     elif i[2:] == 'Y':
         result_II.append(3)
-        draws.append(i[:2])
+        draws.append(i[:1])
     elif i[2:] == 'X':
         result_II.append(0)
-        losses.append(i[:2])
+        losses.append(i[:1])
+
+#print(lines)
+#A - rock - X - 1
+#B - paper - Y - 2
+#C - scissors - Z - 3
 
 for points in wins:
     if points == 'A':
@@ -71,19 +77,21 @@ for points in wins:
 
 for points in draws:
     if points == 'A':
-        result_II.append(2)
-    elif points == 'B':
-        result_II.append(3)
-    elif points == 'C':
         result_II.append(1)
+    elif points == 'B':
+        result_II.append(2)
+    elif points == 'C':
+        result_II.append(3)
 
 for points in losses:
     if points == 'A':
-        result_II.append(2)
-    elif points == 'B':
         result_II.append(3)
-    elif points == 'C':
+    elif points == 'B':
         result_II.append(1)
+    elif points == 'C':
+        result_II.append(2)
 
-
+print('')
 print(result_II)
+print('')
+print(sum(result_II))
