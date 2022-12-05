@@ -1,3 +1,4 @@
+# Part One
 with open("5thDay.txt", "r") as file:
     lines = file.read().split("\n")[0:8]
 
@@ -111,6 +112,7 @@ for i in directions:
 print('')
 print('Answer Part One: ' + str(first[-1]) + str(second[-1]) + str(third[-1]) + str(fourth[-1]) +
       str(fifth[-1]) + str(sixth[-1]) + str(seventh[-1]) + str(eighth[-1]) + str(nineth[-1]))
+
 # Part Two
 
 def boxNd(howMuch, toList, fromList):
