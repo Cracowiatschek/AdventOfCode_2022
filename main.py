@@ -1,79 +1,116 @@
-# Part 1
 
-with open("4thDay.txt", "r") as file:
-    lines = file.read().split("\n")
+with open("5thDay.txt", "r") as file:
+    lines = file.read().split("\n")[0:8]
 
-def commonMember(stList, ndList):
-    result = [i for i in stList if i in ndList]
-    return result
+with open("5thDay.txt", "r") as ins:
+    instruction = ins.read().split("\n")[10:]
 
-stElves = []
-ndElves = []
-elves = []
+directions = []
+
+for i in instruction:
+    s = i.split(' ')
+    directions.append([int(s[1]), int(s[3]), int(s[5])])
+
+first = []
+second = []
+third = []
+fourth = []
+fifth = []
+sixth = []
+seventh = []
+eighth = []
+nineth = []
+
 
 for i in lines:
-    elf = i.split((","))
-    elves.append(elf)
 
-    splitStElf = elf[0].split('-')
-    splitNdElf = elf[1].split('-')
-
-    stElf = []
-    ndElf = []
-
-    for element in splitStElf:
-        stElf.append(int(element))
-
-    for element in splitNdElf:
-        ndElf.append(int(element))
-
-    stElves.append(stElf)
-    ndElves.append(ndElf)
-
-rangeStElves = []
-rangeNdElves = []
-
-for i in stElves:
-    data = []
-    for num in range(i[0],i[1]+1):
-        data.append(num)
-
-    rangeStElves.append(data)
-
-for i in ndElves:
-    data = []
-    for num in range(i[0],i[1]+1):
-        data.append(num)
-
-    rangeNdElves.append(data)
-
-data = []
-id = 0
-
-for i in range(len(rangeStElves)):
-    score = commonMember(rangeStElves[id],rangeNdElves[id])
-    if len(score) == len(rangeStElves[id]):
-        data.append(score)
-    elif len(score) == len(rangeNdElves[id]):
-        data.append(score)
+    if i[1] != ' ':
+        first.append(i[1])
+    else:
+        pass
+    if i[5] != ' ':
+        second.append(i[5])
+    else:
+        pass
+    if i[9] != ' ':
+        third.append(i[9])
+    else:
+        pass
+    if i[13] != ' ':
+        fourth.append(i[13])
+    else:
+        pass
+    if i[17] != ' ':
+        fifth.append(i[17])
+    else:
+        pass
+    if i[21] != ' ':
+        sixth.append(i[21])
+    else:
+        pass
+    if i[25] != ' ':
+        seventh.append(i[25])
+    else:
+        pass
+    if i[29] != ' ':
+        eighth.append(i[29])
+    else:
+        pass
+    if i[33] != ' ':
+        nineth.append(i[33])
     else:
         pass
 
-    id += 1
+print(directions[:3])
+print(directions[-3:])
+print('')
 
-print(len(data))
+first.reverse()
+second.reverse()
+third.reverse()
+fourth.reverse()
+fifth.reverse()
+sixth.reverse()
+seventh.reverse()
+eighth.reverse()
+nineth.reverse()
 
-# Part 2
+print(first)
+print(second)
+print(third)
+print(fourth)
+print(fifth)
+print(sixth)
+print(seventh)
+print(eighth)
+print(nineth)
+print(len(first)+len(second)+len(third)+len(fourth)+len(fifth)+len(sixth)+len(seventh)+
+      len(eighth)+len(nineth))
 
-data = []
-id = 0
+def box(howMuch, toList, fromList):
+    toList.extend(fromList[-howMuch:])
+    del fromList[-howMuch:]
+    return toList
 
-for i in range(len(rangeStElves)):
-    score = commonMember(rangeStElves[id],rangeNdElves[id])
-    if score != []:
-        data.append(score)
-    else:
-        pass
-    id += 1
 
-print(len(data))
+for i in directions:
+    boxes = [first, second, third, fourth, fifth, sixth, seventh, eighth, nineth]
+    box(i[0],boxes[i[2]-1],boxes[i[1]-1])
+
+
+print('')
+
+print(first)
+print(second)
+print(third)
+print(fourth)
+print(fifth)
+print(sixth)
+print(seventh)
+print(eighth)
+print(nineth)
+print(len(first)+len(second)+len(third)+len(fourth)+len(fifth)+len(sixth)+len(seventh)+
+      len(eighth)+len(nineth))
+print('Answer: ' + str(first[-1]) + str(second[-1]) + str(third[-1]) + str(fourth[-1]) +
+                 str(fifth[-1]) + str(sixth[-1]) + str(seventh[-1]) + str(eighth[-1]) + str(nineth[-1]))
+

@@ -29,6 +29,6 @@ print(max(elves))
 elves.sort()
 long = len(elves)
 
-top3 = [elves[long - 1], elves[long - 2], elves[long - 3]]
+top3 = [elves[-3:]]
 
 print(sum(top3))
