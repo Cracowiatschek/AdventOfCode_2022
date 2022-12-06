@@ -41,6 +41,7 @@ for i in range(len(chars)-14):
 score = []
 
 id = 0
+
 for i in result:
 
     if len(i) == 14:
