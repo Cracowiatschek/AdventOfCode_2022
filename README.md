@@ -7,3 +7,4 @@
 |Third Day|[3rdDay.py](https://github.com/Cracowiatschek/AdventOfCode_2022/blob/master/3rdDay.py)|Rucksack Reorganisation|++|
 |Fourth Day|[4thtDay.py](https://github.com/Cracowiatschek/AdventOfCode_2022/blob/master/4thDay.py)|Camp Clanup|++|
 |Fifth Day|[5thDay.py](https://github.com/Cracowiatschek/AdventOfCode_2022/blob/master/5thDay.py)|Supply Stacks|++|
+|Sixth Day|[6thDay.py](https://github.com/Cracowiatschek/AdventOfCode_2022/blob/master/6thDay.py)|Tuning Trouble|++|
