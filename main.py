@@ -1,52 +1,57 @@
-# Part One
-with open("6thDay.txt", "r") as file:
-    lines = file.read()
+#Part One
 
-chars = list(lines)
-result = []
+with open("7thDay.txt", "r") as file:
+    lines = file.read().split("\n")
+
+print(lines)
 
 id = 0
+allDir = []
+commands = []
+files = []
 
-for i in range(len(chars)-4):
-    section = chars[id:id+4]
+for i in lines:
 
-    result.append(list(set(section)))
+    if i[0] == '$':
+        commands.append([i[2:4],id])
+    elif i[:3] == 'dir':
+        allDir.append([i[4:],id])
+    else:
+        files.append([i.split(' '), id])
+
     id += 1
 
-score = []
+# catalogs = []
+#
+# for i in commands:
+#     if i == 'cd' and lines[i[1]] != 'cd ..':
+#         catalogs.append(lines[i[1]])
+#     else:
+#         pass
+#
 
-id = 0
 
-for i in result:
+# def directories(commandList):
+#
+#     id = 0
+#     allDir = []
+#     commands = []
+#     files = []
+#
+#     for i in commandList:
+#         if i[0] == '$':
+#             commands.append([i[2:4], id])
+#         elif i[:3] == 'dir':
+#             allDir.append([i[4:], id])
+#         else:
+#             files.append([i.split(' '), id])
+#         id += 1
+#
+#     for dirs in allDir:
+#         if
 
-    if len(i) == 4:
-        score.append(id+4)
-        id += 1
-    else:
-        id += 1
 
-print('')
-print('Part One Answer:' + str(min(score)))
-
-#Part Two
-result = []
-
-id = 0
-
-for i in range(len(chars)-14):
-    section = chars[id:id+14]
-    result.append(list(set(section)))
-    id += 1
-
-score = []
-
-id = 0
-for i in result:
-
-    if len(i) == 14:
-        score.append(id+14)
-        id += 1
-    else:
-        id += 1
-
-print('Part Two Answer:' + str(min(score)))
+print(allDir)
+print(commands)
+print(files)
+print(catalogs)
